@@ -1,0 +1,25 @@
+<table class="table table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>ID</th>
+            <th>DATA</th>
+            <th>HORA</th>
+            <th>TIPO</th>
+            <th>LOCALIZAÇÃO</th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let lancamento of lancamentos">
+        <tr>    
+            <td>{{lancamento.id}}</td>
+            <td>{{lancamento.data | data| date:'dd/MM/yyyy'}}</td>
+            <td>{{lancamento.data | hora}}</td>
+            <td>{{lancamento.tipo | tipo}} </td>
+            <td>
+                <a [href]="urlLocalizacao(lancamento.localizacao)"
+                target="_blank">
+                  {{lancamento.localizacao}}
+                </a>
+            </td>
+        </tr>
+    </tbody>
+</table>
